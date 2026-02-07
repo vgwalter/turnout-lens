@@ -1,7 +1,10 @@
-library(tidyverse)
+library(readr)
 library(here)
 
-raw_turnout <- read_tsv(here("data", "raw", "icpsr", "county_turnout_icpsr.tsv"))
+staged_turnout <- read_tsv(
+  here("data", "raw", "icpsr", "county_turnout_icpsr.tsv")
+)
 
-glimpse(raw_turnout)
+saveRDS(staged_turnout, here("data", "processed", "staged_turnout.rds"))
+
 
